@@ -1,0 +1,7 @@
+---
+- hosts: node01  # Host or Group of Selections
+  tasks:
+  - name: install httpd
+    shell: yum install httpd
+  - name: Check httpd install # Naming the task for debug purpose
+    shell: rpm -qa | grep git  # Using module ( doing the task )
