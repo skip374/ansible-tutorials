@@ -1,6 +1,6 @@
 ---
 # create new group, appservers, and install java
-- hosts: webservers  # Host or Group of Selections
+- hosts: web # Host or Group of Selections
   gather_facts: true
   become: true
   vars:
@@ -25,13 +25,13 @@
   - name: Start httpd
     service: name=apache2 state=started enabled=yes
 
-- hosts: dbservers # Host or Group of Selections
+- hosts: db # Host or Group of Selections
   tasks:
   - name: Install Mysql web server # Naming the task for debug purpose
     dnf: pkg=mysql state=installed  # Using module ( doing the task )
   
 
-- hosts: appservers
+- hosts: app
   become: true
   tasks:
   - name: Install default-jdk
