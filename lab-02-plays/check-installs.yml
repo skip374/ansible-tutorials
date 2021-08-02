@@ -2,7 +2,7 @@
 - hosts: node01  
   tasks:
   - name: Task 1
-    yum: install nginx
+    shell: yum install nginx
     yum: name=nginx state=present
   - name: Task 2 
     service: name=nginx state=started enabled=yes
