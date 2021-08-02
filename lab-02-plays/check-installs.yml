@@ -1,8 +1,10 @@
 ---
 - hosts: node01  
   tasks:
+  - name: Install epel
+    shell: yum install epel-release -y
   - name: Install nginx
-    shell: yum install nginx
+    shell: yum install nginx -y
   - name: Task 1
     yum: name=nginx state=present
   - name: Task 2 
