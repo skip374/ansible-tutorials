@@ -12,7 +12,7 @@
   - name: Task 3
     file: path=/home/ec2-user/usingAnsible state=directory
   - name: Task 4
-    copy: src=Vagrantfile dest=/tmp 
+    copy: src=Vagrantfile dest=/README.md 
 
 
 
