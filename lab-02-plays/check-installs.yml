@@ -1,7 +1,15 @@
 ---
-- hosts: node01  # Host or Group of Selections
+- hosts: node01  
   tasks:
-  - name: install httpd
-    shell: yum install httpd
-  - name: Check httpd install # Naming the task for debug purpose
-    shell: rpm -qa | grep git  # Using module ( doing the task )
+  - name: Task 1
+    yum: name=nginx state=present
+  - name: Task 2 
+    service: name=nginx state=started enabled=yes
+  - name: Task 3
+    file: path=/home/ec2-user/usingAnsible state=directory
+  - name: Task 4
+    copy: src=Vagrantfile dest=/tmp 
+
+
+
+
