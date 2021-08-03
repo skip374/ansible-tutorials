@@ -2,7 +2,7 @@
 - hosts: web  
   tasks:
   - name: Task a 1 
-    shell: mkdir /home/ec2-user/testdirAnsible2
+    shell: mkdir /home/ec2-user/testdirAnsible3
   - name: Task a 2
     copy: src=../inventory/ansible-nodes dest=/tmp/ansible-nodes
   - name: Task a 3
@@ -12,7 +12,7 @@
   - name: Task a 5
     yum: name=git state=present
   - name: Task a 6
-    git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/tmp version=HEAD
+    git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/ version=HEAD
 
 
 
