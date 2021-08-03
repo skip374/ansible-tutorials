@@ -7,8 +7,7 @@
     - name: password
       prompt: What is your password?
   vars:
-    user:
-      var: username
+    user: username
   tasks:
     - name: Your input
       debug: 
