@@ -23,7 +23,7 @@
     when: ansible_distribution == "CentOS"
 
   - name: Start httpd
-    service: name=apache2 state=started enabled=yes
+    service: name=httpd state=started enabled=yes
 
 - hosts: db # Host or Group of Selections
   tasks:
