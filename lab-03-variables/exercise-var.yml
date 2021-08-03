@@ -6,7 +6,13 @@
       private: no
     - name: password
       prompt: What is your password?
+  vars:
+    user:
+      var: username
   tasks:
     - name: Your input
       debug: 
         var: username
+    - name: The user var was set
+      debug:
+        var: user
