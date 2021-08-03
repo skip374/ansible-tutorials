@@ -27,4 +27,7 @@
     - name: The ip of the box
       debug:
         var: ansible_default_ipv4.address
+
+    - name: Your hostname is being changed
+      shell: hostname {{user}}
     
