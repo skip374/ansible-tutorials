@@ -1,0 +1,12 @@
+hosts: web
+  gather_facts: true
+  vars_prompt:
+    - name: username
+      prompt: What is your username?
+      private: no
+    - name: password
+      prompt: What is your password?
+  tasks:
+    - name: Your input
+      debug: 
+        var: username
