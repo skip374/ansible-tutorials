@@ -32,9 +32,14 @@
       name: httpd
       state: absent
 
-  - name: Install the latest version of Apache from the testing repo (We dont have a repo)
+  - name: Install the latest version of Apache from the testing repo (We dont have a)
     yum:
       name: httpd
+      state: present
+
+  - name: Install one specific version of Apache
+    yum:
+      name: httpd-2.2.29-1.4.amzn1
       state: present
 
   - name: Upgrade all packages

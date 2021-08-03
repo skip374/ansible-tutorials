@@ -1,7 +1,7 @@
 - hosts: web
   gather_facts: true
   vars:
-    my_name: Chandan
+    my_name: Kyle Willard
   tasks:
     - yum:
         pkg: httpd
@@ -37,15 +37,10 @@
     - debug:
         msg: "{{ my_name }}"
       when: my_name == "beCloudReady"
-
-    - name: Display all variables/facts known for a host
-      debug:
-        var: hostvars[inventory_hostname]
       
-
     - name: Display some varialbes variables/facts known for a host
       debug:
-        var: hostvars[inventory_hostname].ansible_all_ipv4_addresses[0]
+        var: result.stdout_lines[0]
       # when: hostvars[inventory_hostname].ansible_all_ipv4_addresses[0] == "172.31.6.217"
 
 
