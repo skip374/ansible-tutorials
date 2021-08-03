@@ -9,9 +9,6 @@
         name: java-1.8.0-openjdk-devel
         state: installed
 
-#    - name: make tomcat User
-#      shell: useradd -m -U -d /opt/tomcat -s /bin/false tomcat
-
    - name: download tomcat server packages
     get_url:
       url: http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
