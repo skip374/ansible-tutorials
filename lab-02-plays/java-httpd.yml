@@ -7,10 +7,8 @@
     httpd_port: 8080
   tasks:
   
-  - apt:
-      pkg: apache2
-      state: installed
-    when: ansible_distribution == "RedHat" 
+  - name: Install httpd
+    yum: install httpd -y
 
   - yum:
       pkg: httpd
