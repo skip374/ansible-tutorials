@@ -1,7 +1,7 @@
 - hosts: node01
   gather_facts: false
   tasks:
-  - name: Create files on loop
+  - name: Does yum installs on loop
     yum: 
       pkg: "{{item}}"
       state: installed
