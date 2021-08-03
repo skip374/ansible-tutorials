@@ -12,9 +12,9 @@
     - name: Your input
       debug: 
         var: username
-        
+
     - name: The user var was set
       vars:
-        user: username
+        user: "{{username}}"
       debug:
         var: user
