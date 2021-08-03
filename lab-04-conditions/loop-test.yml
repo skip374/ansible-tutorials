@@ -1,0 +1,24 @@
+- hosts: node01
+  gather_facts: false
+  tasks:
+  - name: Create files on loop
+    yum: 
+      pkg: "{{item}}"
+      state: installed
+    with_items:
+    - mlocate
+    - strace
+    - java-1.8.0-openjdk
+    - yum-utils
+    - php
+
+  - name: Create files on loop
+    shell: mkdir /home/ec2-user/{{item}}
+    with_items:
+    - yelp
+    - google
+    - apple
+    - yahoo
+    - allstate
+
+
