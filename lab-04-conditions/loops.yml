@@ -39,13 +39,13 @@
       groups: "{{ item.groups }}"
       state: present
     with_items:
-        - { name: testuser1, uid: 1002, groups: "vagrant" }
-        - { name: testuser2, uid: 1003, groups: vagrant }
+        - { name: testuser1, uid: 1004, groups: "vagrant" }
+        - { name: testuser2, uid: 1005, groups: vagrant }
 
   - name: more complex items to add several users debug
     debug: msg="{{ item.name }}"
     with_items:
-        - { name: testuser1, uid: 1002, groups: "vagrant" }
-        - { name: testuser2, uid: 1003, groups: vagrant }
+        - { name: testuser1, uid: 1006, groups: "vagrant" }
+        - { name: testuser2, uid: 1007, groups: vagrant }
 
 
