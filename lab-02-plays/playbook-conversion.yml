@@ -4,6 +4,7 @@
     packages:
      - git
      - httpd
+     - nginx
 
   tasks:
 #  - name: Task a 1 
@@ -16,10 +17,12 @@
     yum: name=httpd state=present
   - name: Task a 5
     yum: name=git state=present
-  - name: Task a4 and a5 combined using list var
+  - name: Task a4, a5, and b1 combined using list var
     yum:
       name: "{{packages}}"
       state: present
+    - debug: "we ran packages {{packages}}" 
+  
 #  - name: Task a 6
 #   git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/home/ec2-user/testdirAnsible1 version=HEAD
 
