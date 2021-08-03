@@ -1,4 +1,4 @@
-- hosts: node01
+- hosts: web
   gather_facts: true
   vars:
     my_name: Chandan
@@ -55,21 +55,21 @@
   - hostname: name="{{ inventory_hostname }}"
     become: yes
 
-- hosts: webservers
+- hosts: web
   gather_facts: false
   name: Running group var debugs for webserver
   tasks:
    - debug: 
       var: my_group_var
 
-- hosts: dbserver
+- hosts: db
   gather_facts: false
   name: Running group var debugs for webserver
   tasks:
     - debug: var=testname
   
 
-- hosts: appservers
+- hosts: app
   gather_facts: false
   name: Running group var debugs for appservers
   tasks:
