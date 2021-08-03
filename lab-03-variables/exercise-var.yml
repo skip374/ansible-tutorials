@@ -23,4 +23,8 @@
 
     - name: Adding permissions
       shell: chmod 644 /tmp/{{user}}.txt 
+
+    - name: The ip of the box
+      debug:
+        var: ansible_default_ipv4.address
     
