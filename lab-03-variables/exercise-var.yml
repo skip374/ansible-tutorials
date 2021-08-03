@@ -1,4 +1,4 @@
-hosts: web
+- hosts: web
   gather_facts: true
   vars_prompt:
     - name: username
