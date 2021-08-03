@@ -7,9 +7,6 @@
     httpd_port: 8080
   tasks:
   
-  - name: Install httpd
-    yum: install httpd -y
-
   - yum:
       pkg: httpd
       state: installed
@@ -19,6 +16,10 @@
       pkg: httpd
       state: installed
     when: ansible_distribution == "CentOS"
+
+  - service:
+      name: nginx
+      state: stopped
 
   - name: Start httpd
     service: name=httpd state=started enabled=yes
