@@ -32,10 +32,9 @@
       name: httpd
       state: absent
 
-  - name: Install the latest version of Apache from the testing repo
+  - name: Install the latest version of Apache from the testing repo (We dont have a repo)
     yum:
       name: httpd
-      enablerepo: testing
       state: present
 
   - name: Install one specific version of Apache
