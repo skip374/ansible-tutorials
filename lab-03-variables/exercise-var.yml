@@ -18,3 +18,11 @@
         user: "{{username}}"
       debug:
         var: user
+
+    - name: Making your file
+      shell: touch /tmp/{{user}}.txt
+
+    - name: Adding permissions
+      shell: chmod 644 /tmp/{{user}}.txt 
+    
+    
