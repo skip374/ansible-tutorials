@@ -13,11 +13,9 @@
       shell: useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 
     - name: download tomcat server packages
-      wget: http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
-
-
-    - name: extract tomcat packages
-      shell: tar -xf apache-tomcat-9.0.44.tar.gz
+      yum:
+        name: tomcat
+        state: installed
 
     - name: start tomcat services
       shell: systemctl start apache-tomcat-9.0.44/bin/startup.sh
