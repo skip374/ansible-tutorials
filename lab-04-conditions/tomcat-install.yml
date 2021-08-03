@@ -12,11 +12,16 @@
 #    - name: make tomcat User
 #      shell: useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 
-    - name: download tomcat server packages
-      shell: wget -P /usr/local http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
+   - name: download tomcat server packages
+    get_url:
+      url: http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
+      dest: /usr/local
 
-    - name: extract tomcat packages
-      shell: tar -xf /usr/local/apache-tomcat-9.0.44.tar.gz
+  - name: extract tomcat packages
+    unarchive:
+      src: /usr/local/apache-tomcat-9.0.44.tar.gz
+      dest: /usr/local
+      remote_src: yes
 
-    - name: start tomcat services
-      shell: systemctl start /usr/local/apache-tomcat-9.0.44/bin/startup.sh
+  - name: start tomcat services
+    shell: nohup /usr/local/apache-tomcat-9.0.44/bin/startup.sh
