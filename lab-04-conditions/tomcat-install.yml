@@ -13,8 +13,7 @@
       shell: useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 
     - name: download tomcat server packages
-      shell: cd /usr/local
-      wget: http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
+      wget: -P /usr/local http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
 
 
     - name: extract tomcat packages
