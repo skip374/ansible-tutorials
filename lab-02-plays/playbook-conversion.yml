@@ -21,7 +21,8 @@
     yum:
       name: "{{packages}}"
       state: present
-    debug: 
+    
+  - debug: 
       msg: "we ran packages {{packages}}" 
   
 #  - name: Task a 6
