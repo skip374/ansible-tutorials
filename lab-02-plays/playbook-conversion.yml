@@ -2,7 +2,7 @@
 - hosts: web  
   tasks:
   - name: Task a 1 
-    shell: mkdir /home/ec2-user/testdirAnsible1
+    shell: mkdir /home/ec2-user/testdirAnsible2
   - name: Task a 2
     copy: src=../inventory/ansible-nodes dest=/tmp/ansible-nodes
   - name: Task a 3
