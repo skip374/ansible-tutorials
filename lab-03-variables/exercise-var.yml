@@ -6,7 +6,8 @@
       private: no
     - name: password
       prompt: What is your password?
-
+  vars:
+    user: "{{username}}"
   tasks:
 
     - name: Your input
@@ -14,8 +15,6 @@
         var: username
 
     - name: The user var was set
-      vars:
-        user: "{{username}}"
       debug:
         var: user
 
@@ -24,5 +23,4 @@
 
     - name: Adding permissions
       shell: chmod 644 /tmp/{{user}}.txt 
-    
     
