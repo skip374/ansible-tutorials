@@ -1,0 +1,30 @@
+---
+- hosts: web  
+  tasks:
+  - name: Task a 1 
+    shell: mkdir /home/ec2-user/testdirAnsible
+  - name: Task a 2
+    copy: src=inventory/ansible-nodes dest=/tmp/ansible-nodes
+  - name: Task a 3
+    shell: cat /tmp/ansible-nodes
+  - name: Task a 4
+    yum: name=httpd state=present
+  - name: Task a 5
+    yum: name=git state=present
+  - name: Task a 6
+    git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/tmp version=HEAD
+
+
+
+  - name: Task b 1
+    yum: name=nginx state=present
+  - name: Task b 2 
+    service: name=nginx state=started enabled=yes
+  - name: Task b 3
+    file: path=/home/ec2-user/usingAnsible state=directory
+  - name: Task b 4
+    copy: src=../README.md dest=/temp 
+
+
+
+
