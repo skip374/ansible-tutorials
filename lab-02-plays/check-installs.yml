@@ -1,5 +1,5 @@
 ---
-- hosts: node01  
+- hosts: web  
   tasks:
   - name: Install epel
     shell: yum install epel-release -y
@@ -17,3 +17,7 @@
 
 
 
+ansible -m -m yum -a "name=nginx state=present" node00 --become
+ansible -m service -a "name=nginx state=started enabled=yes" node00 --become
+ansible -m file -a "path=/home/ec2-user/usingAnsible state=directory" node00 --become
+ansible -m copy -a "src=Vagrantfile dest=/tmp" node00 --become
