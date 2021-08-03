@@ -12,7 +12,7 @@
   - name: Task a 5
     yum: name=git state=present
   - name: Task a 6
-    git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/ version=HEAD
+    git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/home/ec2-user/testdirAnsible1 version=HEAD
 
 
 
