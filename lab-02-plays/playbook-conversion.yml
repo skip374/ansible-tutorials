@@ -1,5 +1,10 @@
 ---
 - hosts: web  
+  vars:
+    packages:
+     - git
+     - httpd
+
   tasks:
 #  - name: Task a 1 
 #   shell: mkdir /home/ec2-user/testdirAnsible3
@@ -11,8 +16,12 @@
     yum: name=httpd state=present
   - name: Task a 5
     yum: name=git state=present
-  - name: Task a 6
-    git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/home/ec2-user/testdirAnsible1 version=HEAD
+  - name: Task a4 and a5 combined using list var
+    yum:
+      name: "{{packages}}"
+      state: present
+#  - name: Task a 6
+#   git: repo=https://github.com/becloudready/prometheus_monitoring.git dest=/home/ec2-user/testdirAnsible1 version=HEAD
 
 
 
