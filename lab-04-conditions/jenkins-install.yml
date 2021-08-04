@@ -1,4 +1,4 @@
-- hosts: webservers
+- hosts: web
   gather_facts: false
   task:
     - yum:
