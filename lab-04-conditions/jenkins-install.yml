@@ -44,7 +44,7 @@
   - name: stop jenkins
     systemd:
         name: jenkins
-         state: stopped
+        state: stopped
   - name: Change Jenkins Java Option
     lineinfile:
         dest: /etc/sysconfig/jenkins
