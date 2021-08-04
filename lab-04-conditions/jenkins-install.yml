@@ -1,11 +1,8 @@
-- hosts: web
-  gather_facts: true
-  vars:
-    my_name: Kyle Willard
-  tasks:
+- hosts: webservers
+  gather_facts: false
+  task:
     - yum:
-        pkg: httpd
+        name: httpd
         state: installed
-      when: ansible_distribution == "RedHat"
 
 
