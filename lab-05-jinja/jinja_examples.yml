@@ -1,4 +1,4 @@
-- hosts: webservers
+- hosts: appservers
   vars:
     user_name: Chandan
   tasks:
