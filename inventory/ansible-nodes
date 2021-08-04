@@ -1,8 +1,6 @@
 node01 ansible_ssh_host=147.182.177.124 ansible_ssh_user=root 
 node02 ansible_ssh_host=143.198.35.225 ansible_ssh_user=root 
 
-
-
 [web]
 node01
 
