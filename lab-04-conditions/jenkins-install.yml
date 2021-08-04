@@ -1,18 +1,19 @@
-- hosts: webservers
+- name: Install httpd on webserver
+  hosts: webservers
   gather_facts: true
   tasks:
     - yum:
         pkg: httpd
         state: installed
 
-- hosts: dbservers
+- hosts: Install mysql dbservers
   gather_facts: true
   tasks:
     - yum:
-        pkg: httpd
+        pkg: mysql
         state: installed
 
-- name: Install Jenkins
+- name: Install Jenkins on appserver
   hosts: appservers
   gather_facts: false
   become: true
@@ -27,12 +28,12 @@
       state: present
   - name: download jenkins.repo
     get_url:
-      url: http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+      url: https://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
       dest: /etc/yum.repos.d/jenkins.repo
   - name: import jenkins key
     rpm_key:
       state: present
-      key: https://jenkins-ci.org/redhat/jenkins-ci.org.key
+      key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
   - name: install jenkins
     yum:
       name: jenkins
