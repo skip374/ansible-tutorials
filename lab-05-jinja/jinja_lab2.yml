@@ -1,0 +1,9 @@
+- hosts: webservers
+  vars:
+    user_name: Kyle
+  tasks:
+    - template:
+        src: pc-specs.j2
+        dest: ../home/ec2-user/facts
+    - debug: var=play_hosts
+

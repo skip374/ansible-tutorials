@@ -1,0 +1,9 @@
+- hosts: webservers
+  vars:
+    user_name: Kyle
+  tasks:
+    - template:
+        src: boxinfo.j2
+        dest: /tmp/box-info
+    - debug: var=play_hosts
+

@@ -1,0 +1,20 @@
+Hi {{ user_name }} the pc specs are as listed:
+
+My processor is:
+{{ansible_facts.processor}}
+{{ansible_facts.processor_cores}}
+{{ansible_facts.processor_count}}
+{{ansible_facts.processor_threads_per_core}}
+{{ansible_facts.processor_vcpus}}
+
+My IP Address are:
+{{ansible_all_ipv4_addresses}}
+
+My OS version is:
+{{ansible_os_family}}
+{{ansible_facts.distribution}}
+
+With a netmask of:
+{{ansible_eth1.ipv4.netmask}}
+
+
