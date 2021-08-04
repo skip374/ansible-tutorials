@@ -1,5 +1,5 @@
-- hosts: web
-  gather_facts: false
+- hosts: webservers
+  gather_facts: true
   task:
     - yum:
         pkg: httpd
