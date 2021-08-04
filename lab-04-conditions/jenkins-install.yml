@@ -42,14 +42,14 @@
       name: jenkins
       state: present
   - name: stop jenkins
-      systemd:
-          name: jenkins
-          state: stopped
+    systemd:
+        name: jenkins
+         state: stopped
   - name: Change Jenkins Java Option
-        lineinfile:
-            dest: /etc/sysconfig/jenkins
-            regexp: ^JENKINS_JAVA_OPTIONS=
-            line: JENKINS_JAVA_OPTIONS="{{JAVA_OPTIONS}}"
+    lineinfile:
+        dest: /etc/sysconfig/jenkins
+        regexp: ^JENKINS_JAVA_OPTIONS=
+        line: JENKINS_JAVA_OPTIONS="{{JAVA_OPTIONS}}"
   - name: start jenkins
     systemd:
       name: jenkins
