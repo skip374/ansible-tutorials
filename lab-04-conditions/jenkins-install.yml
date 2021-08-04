@@ -15,7 +15,7 @@
         state: installed
 
 - name: Install Jenkins on appserver
-  hosts: appservers
+  hosts: webservers
   gather_facts: false
   become: true
   vars:
