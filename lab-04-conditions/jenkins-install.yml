@@ -42,7 +42,7 @@
       name: jenkins
       state: present
   - name: stop jenkins
-    service: jenkins stop
+    shell: service jenkins stop
   - name: Change Jenkins Java Option
     lineinfile:
         dest: /etc/sysconfig/jenkins
