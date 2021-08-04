@@ -1,5 +1,5 @@
-- name: Install All
-  hosts: webservers
+---
+- hosts: webservers
   gather_facts: false
   become: true
   task:
@@ -7,8 +7,7 @@
         name: httpd
         state: installed
 
-- name: Install mysql
-  hosts: dbservers
+- hosts: dbservers
   gather_facts: false
   become: true
   task:
@@ -16,8 +15,7 @@
         name: mysql
         state: installed
 
-- name: Install Jenkins
-  hosts: appservers
+- hosts: appservers
   gather_facts: false
   become: true
   tasks:
