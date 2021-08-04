@@ -1,0 +1,17 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+    env: dev
+  roles:
+    - httpd
+
+- hosts: dbservers
+  become: true
+  roles:
+    - mysql
+
+- hosts: appservers
+  become: true
+  roles:
+    - jenkins
