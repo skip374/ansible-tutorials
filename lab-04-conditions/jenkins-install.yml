@@ -44,10 +44,11 @@
   - name: stop jenkins
     shell: service jenkins stop
   - name: Change Jenkins Java Option
-    lineinfile:
-        dest: /etc/sysconfig/jenkins
-        regexp: ^JENKINS_JAVA_OPTIONS=
-        line: JENKINS_JAVA_OPTIONS="{{JAVA_OPTIONS}}"
+    lineinfile: 
+      dest=/etc/sysconfig/jenkins
+      regexp=^JENKINS_JAVA_OPTIONS=
+      line=JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
+    become: true
   - name: start jenkins
     systemd:
       name: jenkins
