@@ -6,7 +6,8 @@
         pkg: httpd
         state: installed
 
-- hosts: Install mysql dbservers
+- name: Install mysql on dbserver
+  hosts: dbservers
   gather_facts: true
   tasks:
     - yum:
