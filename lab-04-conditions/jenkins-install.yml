@@ -1,6 +1,24 @@
 ---
+- name: Install httpd
+  hosts: webservers
+  gather_facts: false
+  become: true
+  task:
+    - yum:
+        name: httpd
+        state: installed
+
+- name: Install mysql
+  hosts: dbservers
+  gather_facts: false
+  become: true
+  task:
+    - yum:
+        name: mysql
+        state: installed
+
 - name: Install Jenkins
-  hosts: web
+  hosts: appservers
   gather_facts: false
   become: true
   tasks:
