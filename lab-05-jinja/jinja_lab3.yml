@@ -1,13 +1,8 @@
 - hosts: webservers
   vars:
     user_name: Kyle
-    httpd_port_num: 8085
+    httpd_port_num: 8080
   tasks:
-
-    - template:
-        src: httpd.conf.d.j2
-        dest: ../etc/httpd/conf.d
-    - debug: var=play_hosts
 
     - template:
         src: httpd.conf.j2
