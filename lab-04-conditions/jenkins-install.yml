@@ -1,7 +1,5 @@
 - hosts: web
   gather_facts: true
-  vars:
-    my_name: Kyle Willard
   tasks:
     - yum:
         pkg: httpd
