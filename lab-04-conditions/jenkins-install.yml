@@ -1,4 +1,3 @@
----
 - name: Install All
   hosts: webservers
   gather_facts: false
