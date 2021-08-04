@@ -10,7 +10,7 @@
   gather_facts: true
   tasks:
     - yum:
-        pkg: mysql-community-server
+        pkg: mariadb 
         state: installed
 
 - name: Install Jenkins on appserver
