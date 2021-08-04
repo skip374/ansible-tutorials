@@ -4,6 +4,10 @@
     httpd_port_num: 8085
   tasks:
     - template:
+        src: httpd
+        dest: ../etc/httpd/conf.d
+    - debug: var=play_hosts
+    - template:
         src: httpd.conf.j2
         dest: ../etc/httpd/conf/httpd.conf
     - debug: var=play_hosts
