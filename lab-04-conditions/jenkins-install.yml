@@ -1,6 +1,8 @@
-- hosts: webservers
+- hosts: web
   gather_facts: true
-  task:
+  vars:
+    my_name: Kyle Willard
+  tasks:
     - yum:
         pkg: httpd
         state: installed
