@@ -1,7 +1,6 @@
 ---
 - hosts: webservers
   gather_facts: false
-  become: true
   task:
     - yum:
         name: httpd
@@ -9,7 +8,6 @@
 
 - hosts: dbservers
   gather_facts: false
-  become: true
   task:
     - yum:
         name: mysql
