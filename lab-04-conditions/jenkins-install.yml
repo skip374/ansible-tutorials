@@ -18,8 +18,8 @@
   hosts: appservers
   gather_facts: false
   become: true
-  vars:
-    JAVA_OPTIONS: "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
+  # vars:
+  #   JAVA_OPTIONS: "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
   tasks:
   - name: install wget
     yum:
